@@ -1,0 +1,14 @@
+1. Race with Barrier
+This script simulates a race between 3 runners (Huey, Dewey, and Louie) using the Barrier class from threading.
+Runners are added as threads, and each waits at a barrier before proceeding. The barrier ensures all threads reach the same point before any of them continue.
+2. Producer-Consumer with Condition
+A Producer thread generates items and appends them to a shared list (items), while the Consumer thread pops items off the list.
+The Condition object is used to synchronize the two threads. The producer waits when the list is full, and the consumer waits when the list is empty.
+3. Producer-Consumer with Event
+A similar setup, but this time using the Event object for synchronization.
+The producer adds items to a shared list and sets the event, which notifies the consumer thread to pop an item off the list.
+4. Multiple Threads with Locking
+This script demonstrates a scenario with 9 threads, each running with a random duration.
+A lock (threadLock) is used to ensure that only one thread prints its output at a time. The lock is acquired before a thread begins its execution and released after it finishes.
+5. Thread Execution with Random Durations
+This script is similar to the previous one but without the explicit locking. Each thread runs with a random duration and prints information about the thread and its process ID.

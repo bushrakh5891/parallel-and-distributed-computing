@@ -1,0 +1,24 @@
+import threading
+import time
+
+# Define a semaphore with a limit of 2 threads accessing the resource concurrently
+sem = threading.Semaphore(2)
+
+def access_resource(thread_name):
+    sem.acquire()
+    print(f"{thread_name} accessing the resource")
+    time.sleep(2)
+    print(f"{thread_name} done")
+    sem.release()
+
+threads = []
+
+# Create and start threads
+for i in range(5):
+    t = threading.Thread(target=access_resource, args=(f"Thread-{i}",))
+    threads.append(t)
+    t.start()
+
+# Wait for all threads to finish
+for t in threads:
+    t.join()
