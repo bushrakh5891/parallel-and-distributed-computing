@@ -1,6 +1,6 @@
 import asyncio
 
-@asyncio.coroutine
+@asyncio.coroutines
 def factorial(number):
     f = 1
     for i in range(2, number + 1):
@@ -9,7 +9,7 @@ def factorial(number):
         f *= i
     print("Asyncio.Task - factorial(%s) = %s" % (number, f))
     
-@asyncio.coroutine
+@asyncio.coroutines
 def fibonacci(number):
     a, b = 0, 1
     for i in range(number):
@@ -18,7 +18,7 @@ def fibonacci(number):
         a, b = b, a + b
     print("Asyncio.Task - fibonacci(%s) = %s" % (number, a))
     
-@asyncio.coroutine
+@asyncio.coroutines
 def binomial_coefficient(n, k):
     result = 1
     for i in range(1, k + 1):
